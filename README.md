@@ -134,7 +134,9 @@ For ubuntu:
 `sudo apt-get install libyaml-cpp-dev`
 
 For Fedora:  
-`sudo dnf install yaml-cpp-devel`
+`sudo dnf install yaml-cpp-devel`  
+Static:  
+`sudo dnf install yaml-cpp-static libstdc++-static glibc-static`  
 
 # Acknowledgements
 [LiveSplit](https://livesplit.org/) for the amazing program.  
