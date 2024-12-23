@@ -1,0 +1,8 @@
+---
+keyboard: 22
+hotkeys:
+    Split: 57 #Space
+    Reset: 19 #r
+    Undo: 14 #Backspace
+    Skip: 28 #Enter
+    Pause: 119 #Pause

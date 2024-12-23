@@ -27,8 +27,9 @@ class Config {
     }
 
     std::vector<Hotkey> hotkeys;
+    int kb_num = -1;
 
   private:
-    KeyboardHook *kh = KeyboardHook::get();
-    void readConfig(string filePath);
+    KeyboardHook *kh;
+    void readConfig(const string &configPath);
 };
