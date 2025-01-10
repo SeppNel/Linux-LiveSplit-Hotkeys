@@ -4,15 +4,14 @@ Linux app to restore global hotkeys to LiveSplit when run under wine/proton.
 # Usage
 Enable the TCP server in LiveSplit: Right Click -> Control -> Enable TCP server.
 
-Next you need to know wich id does your keyboard have, for that run either: `ls -la /dev/input/by-id/` or `sudo evtest` and look for wich event number is assigned to your keyboard.
-Once you know wich one is it, write it in the config file (instructions below)
+Configure your hotkeys in the `configFile.yml` to your liking. You have more information below.
 
 Then open a terminal and run `sudo ./liveSplit-hotkeys`
 
 ## Configuration
-You can configure wich keyboard to listen for and the hotkeys by editing the config file in the program folder.
+If the option autoDetectKeybooard is enabled in `configFile.yml` (default) the program will try to auto detect your keyboard. If this fails, you can configure wich keyboard to listen for and the hotkeys by editing the config file in the program folder.
 
-To set wich keyboard to listen to, open `configFile.yml` and set the value of `keyboard`
+To set wich keyboard to listen to, open `configFile.yml` and set the value of `autoDetectKeybooard` to False and set the value `keyboard` according to your keyboard event number. You can find it with either: `ls -la /dev/input/by-id/` or `sudo evtest` and look for wich event number is assigned to your keyboard.
 
 In that same file, you can set the hotkeys by modifying the default values. Here is a list of wich values correspond to wich keys:
 
@@ -118,6 +117,7 @@ In that same file, you can set the hotkeys by modifying the default values. Here
 ### Example config file
 ```
 ---
+autoDetectKeybooard: True
 keyboard: 22
 hotkeys:
     Split: 57 #Space

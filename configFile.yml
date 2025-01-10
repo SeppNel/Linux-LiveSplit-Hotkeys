@@ -1,5 +1,6 @@
 ---
-keyboard: 22
+autoDetectKeybooard: True
+keyboard: 1
 hotkeys:
     Split: 57 #Space
     Reset: 19 #r

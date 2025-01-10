@@ -4,16 +4,20 @@
 // Initialize the static instance pointer to nullptr
 KeyboardHook *KeyboardHook::instance = nullptr;
 
-KeyboardHook *KeyboardHook::get(int kb_num) {
+KeyboardHook *KeyboardHook::get() {
     if (nullptr == instance) {
-        instance = new KeyboardHook(kb_num);
+        instance = new KeyboardHook();
     }
     return instance;
 }
 
-KeyboardHook::KeyboardHook(int kb_num) {
+void KeyboardHook::hook(int kb_num) {
     std::string dev = "/dev/input/event" + std::to_string(kb_num);
     fd = open(dev.c_str(), O_RDONLY);
+}
+
+void KeyboardHook::hook(std::string kb_path) {
+    fd = open(kb_path.c_str(), O_RDONLY);
 }
 
 void KeyboardHook::registerKey(const uint16_t key) {

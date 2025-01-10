@@ -28,6 +28,7 @@ class Config {
 
     std::vector<Hotkey> hotkeys;
     int kb_num = -1;
+    bool autoKeyboard = false;
 
   private:
     KeyboardHook *kh;
